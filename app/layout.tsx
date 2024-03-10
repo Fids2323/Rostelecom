@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import './globalStyles/normalize.css'
 import './globalStyles/globals.css'
+import './globalStyles/header.css'
+import './globalStyles/menu.css'
 //import 'bootstrap/dist/css/bootstrap.css'
 import Layout from "@/components/layouts/Layout";
 

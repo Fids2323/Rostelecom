@@ -2,21 +2,29 @@
 import Logo from "@/components/elements/logo/Logo";
 import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
+import Menu from "./Menu";
+import { openMenu } from "@/contex/modals";
+import { addOverflowHiddenFromBody } from "@/lib/utils/common";
 
 const Header = () => {
-	const {lang, translations } = useLang();
+	const { lang, translations } = useLang();
+	
+	const handleOpenMenu = () => { 
+		addOverflowHiddenFromBody()
+		openMenu()
+	}
 
 	return (
 		<header className="header">
 			<div className="container header__container">
-				<button className="header__burger btn-reset">
+				<button className="btn-reset header__burger" onClick={handleOpenMenu}>
 					{translations[lang].header.menu_btn}
 				</button>
+				<Menu/>
 				<div className="header__logo"><Logo/></div>
-				
 				<ul className="header__links list-reset">
 					<li className="header__links__item">
-						<button className="btn-reset header__links__item__btn header__links__item--search"></button>
+						<button className="btn-reset header__links__item__btn header__links__item__btn--search"></button>
 					</li>
 					<li className="header__links__item">
 						<Link className="header__links__item__btn header__links__item__btn--favorites" href='/favorites' />
@@ -27,7 +35,7 @@ const Header = () => {
 					<li className="header__links__item">
 						<Link className="header__links__item__btn header__links__item__btn--cart" href='/cart'/>
 					</li>
-					<li className="header__links__item header__links__item--profile">
+					<li className="header__links__item">
 						<Link className="header__links__item__btn header__links__item__btn--profile" href='/profile'/>
 					</li>
 				</ul>

@@ -23,16 +23,17 @@
 }
 
 body {
-  font-family: Rostelecom-Basis;
-	font-weight: 400;
-	background-color: #102533;
-	color: #E8E9EA;
-	display: flex;
-	flex-direction: column;
+  font-family: Rostelecom Basis;
+  font-weight: 400;
+  background-color: #1D2533;
+  color: #E8E9EA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-	min-width: 1535px;
+	max-width: 1535px;
 	margin: 0 auto;
 	padding: 0 15px;
 }
